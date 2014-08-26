@@ -8,9 +8,6 @@
     "node_modules",
     "libs"
   ],
-  "dependencies": {
-    "bem-components": "git://github.com/bem/bem-components.git#f72047c18062630ca2280674233e986e7b9f2ee8"
-  },
   "devDependencies": {
     "bem-mvc": "git@github.com:bem/bem-mvc.git#v2"
   }

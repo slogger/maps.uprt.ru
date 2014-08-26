@@ -1,0 +1,23 @@
+.sidebar {
+    margin-left: -250px;
+    position: fixed;
+    width: 250px;
+    top: 0px;
+    bottom: 60px;
+    box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    border: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
+}
+
+.sidebar {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}

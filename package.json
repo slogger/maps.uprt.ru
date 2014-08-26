@@ -19,5 +19,9 @@
     "postinstall": "bower-npm-install --non-interactive",
     "deps": "bower-npm-install --non-interactive"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "enb-modules": "^0.2.0",
+    "ym": "^0.1.0"
+  }
 }

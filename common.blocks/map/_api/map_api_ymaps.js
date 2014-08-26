@@ -58,35 +58,6 @@ BEM.DOM.decl({ name: "map", modName: "api", modValue: "ymaps" }, {
             behaviors: ['drag', 'dblClickZoom', 'scrollZoom']
         });
 
-        // Если есть метки, то добавляем их на карту.
-        if (this.params.geoObjects && this.params.geoObjects.length > 0) {
-            this.params.geoObjects.forEach(function (item) {
-                // Проверяем, является ли элемент коллекцией / группой.
-                var geoObject;
-                if (item.collection) {
-                    geoObject = new ymaps.GeoObjectArray({
-                        properties: item.properties
-                    }, item.options);
-
-                    // Теперь добавим элементы, описанные в bemjson, в коллекцию.
-                    item.data.forEach(function (placemark) {
-                        placemark.options = placemark.options || {};
-                        geoObject.add(new ymaps.Placemark(placemark.coords, placemark.properties, placemark.options));
-                    }, this);
-                } else {
-                    item.options = item.options || {};
-                    geoObject = new ymaps.Placemark(item.coords, item.properties, item.options);
-                }
-
-                this._map.geoObjects.add(geoObject);
-            }, this);
-        }
-
-        // Установка bounds по добавленным геообъектам.
-        if (this.params.setupBoundsByGeoObjects) {
-            this._map.setBounds(this._map.geoObjects.getBounds());
-        }
-
         // Установка слоя с тайлами OSM.
         if (this.params.setupOSMTiles) {
             var OSMLayer = function () {
@@ -107,13 +78,6 @@ BEM.DOM.decl({ name: "map", modName: "api", modValue: "ymaps" }, {
             this._map.setType('OSM');
             this._map.copyrights.add('&copy; OpenStreetMap contributors, CC-BY-SA');
         }
-
-        // Добавляем контролы на карту.
-        this._map.controls
-            .add('zoomControl')
-            .add('scaleLine')
-            .add('typeSelector')
-            .add('mapTools');
 
         // Блок поделится информацией о том, что он инициализировал карту.
         // В данных передаём ссылку на экземпляр карты.

@@ -5,10 +5,10 @@ module.exports = function(config) {
             [ require('enb/techs/file-provider'), { target: '?.bemjson.js' } ],
             [ require('enb/techs/files') ],
             [ require('enb/techs/deps') ],
+            [ require('enb/techs/css') ],
             [ require('enb/techs/bemdecl-from-bemjson') ],
             [ require('enb-bemxjst/techs/bemtree-old') ],
             [ require('enb-diverse-js/techs/browser-js'), { target: '?.js' } ],
-            [ require('enb/techs/css-less'), { target: '?.noprefix.css' } ],
             [ require('enb-bemxjst/techs/bemhtml-old') ],
             [ require('enb-bemxjst/techs/html-from-bemjson') ]
         ]);
@@ -16,7 +16,7 @@ module.exports = function(config) {
         nodeConfig.addTargets([
             '?.min.css',
             '?.bemtree.js',
-            '?.min.js',
+            '?.js',
             '?.bemhtml.js',
             '?.html'
         ]);
@@ -25,10 +25,6 @@ module.exports = function(config) {
     config.nodes('*app.bundles/*', function(nodeConfig) {
         nodeConfig.addTechs([
             [ require('enb/techs/levels'), { levels: getDesktops(config) } ],
-            [ require('enb-autoprefixer/techs/css-autoprefixer'), {
-                browserSupport: [ 'last 2 versions', 'ie 10', 'ff 24', 'opera 12.16' ],
-                sourceTarget: '?.noprefix.css'
-            }]
         ]);
     });
 
@@ -36,7 +32,8 @@ module.exports = function(config) {
         config.nodes('*.bundles/*', function(nodeConfig) {
             nodeConfig.addTechs([
                 [ require('enb/techs/file-copy'), { sourceTarget: '?.css', destTarget: '?.min.css' } ],
-                [ require('enb/techs/file-copy'), { sourceTarget: '?.js', destTarget: '?.min.js' } ]
+                [ require('enb/techs/file-copy'), { sourceTarget: '?.js', destTarget: '?.min.js' } ],
+                [ require('enb-diverse-js/techs/vanilla-js'), { target: '?.vanilla.js' } ],
             ]);
         });
     });
@@ -45,7 +42,8 @@ module.exports = function(config) {
         config.nodes('*.bundles/*', function(nodeConfig) {
             nodeConfig.addTechs([
                 [ require('enb/techs/borschik'), { sourceTarget: '?.css', destTarget: '?.min.css' } ],
-                [ require('enb/techs/borschik'), { sourceTarget: '?.js', destTarget: '?.min.js' } ]
+                [ require('enb/techs/borschik'), { sourceTarget: '?.js', destTarget: '?.min.js' } ],
+                [ require('enb-diverse-js/techs/vanilla-js'), { target: '?.vanilla.js' } ],
             ]);
         });
     });
