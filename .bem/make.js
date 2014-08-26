@@ -22,33 +22,27 @@ MAKE.decl('BundleNode', {
             'bemjson.js',
             'bemdecl.js',
             'deps.js',
-            'less',
+            'js',
+            'browser.js+bemhtml',
             'css',
+            'prefix.css',
             'bemhtml',
-            'node.js',
-            'browser.js',
             'html'
         ];
 
     },
 
-    getForkedTechs : function() {
-        return this.__base().concat(['less', 'browser.js']);
-    },
 
     getLevelsMap : function() {
         return {
-            desktop: [
+            app: [
+                'libs/bem-components/common.blocks',
+                'libs/bem-components/desktop.blocks',
                 'libs/bem-core/common.blocks',
                 'libs/bem-core/desktop.blocks',
-                'libs/bem-components/common.blocks',
-                'libs/bem-components/design/common.blocks',
-                'libs/bem-components/desktop.blocks',
-                'libs/bem-components/design/desktop.blocks',
                 'libs/bem-mvc/common.blocks',
                 'common.blocks',
                 'design.blocks',
-                'desktop.blocks'
             ]
         };
     },
@@ -63,13 +57,23 @@ MAKE.decl('BundleNode', {
             .concat(resolve(PATH.dirname(this.getNodePrefix()), 'blocks'));
     },
 
-    'create-css-node' : function(tech, bundleNode, magicNode) {
-        var source = this.getBundlePath('less');
-        if(this.ctx.arch.hasNode(source)) {
-            return this.createAutoprefixerNode(tech, this.ctx.arch.getNode(source), bundleNode, magicNode);
-        }
-    }
+    'create-browser.js+bemhtml-optimizer-node': function(tech, sourceNode, bundleNode) {
+        sourceNode.getFiles().forEach(function(f) {
+            this['create-js-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
+        }, this);
+    },
 
+        'create-prefix.css-node' : function(tech, bundle, magic) {
+        return this.createDefaultTechNode.call(this, 'css', bundle, magic);
+    },
+
+    'create-prefix.css-optimizer-node' : function(tech, sourceNode, bundle) {
+        var borschikCss = this['create-css-optimizer-node'];
+        return borschikCss.apply(this, arguments).map(function(source) {
+            var node = this.createAutoprefixerNode(tech, source, bundle);
+            return borschikCss.call(this, tech, node, bundle);
+        }, this);
+    }
 });
 
 MAKE.decl('AutoprefixerNode', {
