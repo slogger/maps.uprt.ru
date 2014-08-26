@@ -1,0 +1,18 @@
+{
+  "author": "Maxim Syrykh",
+  "name": "maps.uprt.ru",
+  "email": "slogger1994@gmail.com",
+  "version": "0.0.0",
+  "ignore": [
+    ".bem/cache",
+    "node_modules",
+    "libs"
+  ],
+  "dependencies": {
+    "bem-components": "git://github.com/bem/bem-components.git#f72047c18062630ca2280674233e986e7b9f2ee8"
+  },
+  "devDependencies": {
+    "v2": "https://github.com/bem/bem-mvc/tree/v2",
+    "bem-mvc": "git@github.com:bem/bem-mvc.git#v2"
+  }
+}
