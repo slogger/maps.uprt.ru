@@ -4,10 +4,7 @@ node_modules
 .idea
 .project
 .svn
-.bem/cache
 .enb/tmp
-_b
-desktop.sets
-desktop.bundles/*/*.*
-!desktop.bundles/*/*.bemjson.js
-!desktop.bundles/.bem/*
+
+*.bundles/*/*.*
+!*.bundles/*/*.bemjson.js
