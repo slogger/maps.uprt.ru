@@ -6,12 +6,11 @@
         { elem: 'meta', attrs: { name: 'description', content: '' } },
         { elem: 'css', url: 'index.css' }
     ],
-    // mix: [ { block: 'waves', mods: { 'init': 'on' } } ],
+    mix: [ { block: 'waves', js: true } ],
     scripts: [{ elem: 'js', url: 'index.js' }],
     content: [
         {
             block: 'map',
-            // mods: { 'api': 'ymaps' },
             attrs: { id: 'map' },
             js: true,
         },

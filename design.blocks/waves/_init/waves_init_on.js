@@ -1,2 +1,1 @@
-var w = new Waves();
-w.displayEffect();
+Waves.displayEffect();
