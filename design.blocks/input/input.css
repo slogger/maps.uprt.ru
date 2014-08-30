@@ -1,0 +1,20 @@
+.input .input__control
+{
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    /*padding: 10px 6px 4px 0px;*/
+
+    border: none;
+    border-bottom: 2px solid #757575;
+    outline: none;
+    background: none;
+}
+
+.input_focused .input__control
+{
+    color: #5264ae;
+    border: none;
+    border-bottom: 2px solid #5264ae;
+}

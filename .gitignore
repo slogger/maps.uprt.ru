@@ -5,6 +5,7 @@ node_modules
 .project
 .svn
 .enb/tmp
+_b
 
 *.bundles/*/*.*
 !*.bundles/*/*.bemjson.js
