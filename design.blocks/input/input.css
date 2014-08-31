@@ -2,19 +2,21 @@
 {
     font-family: 'Roboto';
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
-    /*padding: 10px 6px 4px 0px;*/
+    padding: 10px 5px;
 
     border: none;
-    border-bottom: 2px solid #757575;
+    /*border-bottom: 2px solid #757575;*/
+    /*border: solid 1px #fff;*/
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
     outline: none;
-    background: none;
+    /*background: none;*/
 }
 
 .input_focused .input__control
 {
-    color: #5264ae;
-    border: none;
-    border-bottom: 2px solid #5264ae;
+    color: #000;
 }
