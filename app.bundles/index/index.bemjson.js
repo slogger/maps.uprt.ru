@@ -17,7 +17,7 @@
         {
             block: 'search',
             js: true,
-            // cls: 'waves-effect waves-light waves-block',
+            
             content: [
                 {
                     block: 'input',
@@ -26,12 +26,14 @@
                 },
                 {
                     block: 'button',
+                    cls: 'waves-effect waves-light',
                     content: [
                         'Поиск'
                     ]
                 },
                 {
                     block: 'button',
+                    cls: 'waves-effect waves-light',
                     content: [
                         'Фильтр'
                     ]
