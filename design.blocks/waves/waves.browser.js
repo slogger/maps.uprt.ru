@@ -1,3 +1,18 @@
+/*!
+ * Waves v0.5.2
+ * https://publicis-indonesia.github.io/Waves
+ *
+ * Copyright 2014 Publicis Metro Indonesia, PT. and other contributors
+ * Released under the BSD license
+ * https://github.com/publicis-indonesia/Waves/blob/master/LICENSE
+ */
+
+/*!
+ * waves-on-bem v.0.1.0
+ *
+ * Copyright 2014 slogger
+ */
+
 modules.define('waves', ['i-bem__dom'], function(provide, DOM) {
 
     DOM.decl('waves', {
@@ -252,18 +267,3 @@ modules.define('waves', ['i-bem__dom'], function(provide, DOM) {
 
     provide(DOM);
 });
-
-
-/*!
- * Waves v0.5.2
- * https://publicis-indonesia.github.io/Waves
- *
- * Copyright 2014 Publicis Metro Indonesia, PT. and other contributors
- * Released under the BSD license
- * https://github.com/publicis-indonesia/Waves/blob/master/LICENSE
- */
-
-;(function(window) {
-
-
-})(window);
