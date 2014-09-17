@@ -10,6 +10,9 @@
   ],
   "devDependencies": {
     "bem-mvc": "git@github.com:bem/bem-mvc.git#v2",
-    "bem-social": "voischev/bem-social"
+    "bem-social": "voischev/bem-social",
+    "Waves-on-bem": "~0.1.0"
+  },
+  "dependencies": {
   }
 }
