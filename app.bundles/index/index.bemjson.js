@@ -1,40 +1,40 @@
 ({
-    block: 'page',
-    title: 'maps.uprt.ru',
-    favicon: '/favicon.ico',
-    head: [
-        { elem: 'meta', attrs: { name: 'description', content: '' } },
-        { elem: 'css', url: 'index.css' }
+    block : 'page',
+    title : 'maps.uprt.ru',
+    favicon : '/favicon.ico',
+    head : [
+        { elem : 'meta', attrs : { name : 'description', content : '' } },
+        { elem : 'css', url : 'index.css' }
     ],
-    mix: [ { block: 'waves', js: true } ],
-    scripts: [{ elem: 'js', url: 'index.js' }],
-    content: [
+    mix : [{ block : 'waves', js : true }],
+    scripts : [{ elem : 'js', url : 'index.js' }],
+    content : [
         {
-            block: 'map',
-            attrs: { id: 'map' },
-            js: true,
+            block : 'map',
+            attrs : { id : 'map' },
+            js : true,
         },
         {
-            block: 'search',
-            js: true,
-            
-            content: [
+            block : 'search',
+            js : true,
+
+            content : [
                 {
-                    block: 'input',
+                    block : 'input',
                     // mods : { theme : 'material', type : 'search'},
-                    placeholder : 'Куда вам надо?'
+                    placeholder  : 'Куда вам надо?'
                 },
                 {
-                    block: 'button',
-                    cls: 'waves-effect waves-light',
-                    content: [
+                    block : 'button',
+                    cls : 'waves-effect waves-light',
+                    content : [
                         'Поиск'
                     ]
                 },
                 {
-                    block: 'button',
-                    cls: 'waves-effect waves-light',
-                    content: [
+                    block : 'button',
+                    cls : 'waves-effect waves-light',
+                    content : [
                         'Фильтр'
                     ]
                 }
@@ -42,14 +42,15 @@
             ]
         },
         {
-            block: 'foobar',
-            content: [
+            block : 'foobar',
+            content : [
                 // {
-                //     block: 'menu-button'
-                // }
+                //     block : 'menu-button',
+                //     mix : [{ block : 'button'}]
+                // },
                 {
                     block : 'share',
-                    mods : { service : 'vkontakte', theme : 'normal', size : 'm' },
+                    mods : { service : 'vkontakte', theme : 'normal', size : 'l' },
                     js : {
                         url : 'http://voischev.github.io/bem-social/',
                         title : 'BEM Social Components Library',
@@ -61,7 +62,7 @@
                 },
                 {
                     block : 'share',
-                    mods : { service : 'facebook', theme : 'normal', size : 'm' },
+                    mods : { service : 'facebook', theme : 'normal', size : 'l' },
                     js : {
                         url : 'http://voischev.github.io/bem-social/',
                         title : 'BEM Social Components Library',
@@ -73,7 +74,7 @@
                 },
                 {
                     block : 'share',
-                    mods : { service : 'twitter', theme : 'normal', size : 'm' },
+                    mods : { service : 'twitter', theme : 'normal', size : 'l' },
                     js : {
                         url : 'http://voischev.github.io/bem-social/',
                         title : 'BEM Social Components Library #b_',
@@ -83,7 +84,7 @@
                 },
                 {
                     block : 'share',
-                    mods : { service : 'gplus', theme : 'normal', size : 'm' },
+                    mods : { service : 'gplus', theme : 'normal', size : 'l' },
                     js : {
                         url : 'http://voischev.github.io/bem-social/'
                     },
