@@ -15,7 +15,7 @@ modules.define('map', ['i-bem__dom', 'loader_type_js', 'jquery'], function(provi
             * Выполняется после загрузки API Яндекс.Карт
             */
             'ymapsApiLoaded' : function() {
-                this._drawMap()
+                this._drawMap();
             }
         },
 
